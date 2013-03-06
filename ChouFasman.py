@@ -86,7 +86,8 @@ def CF_find_alpha(seq):
             [estart,end] = CF_extend_alpha(seq, start, start+6)
             #print "Exploring potential alpha " + str(estart) + ":" + str(end)
             #if (CF_good_alpha(seq[estart:end])):
-            results.append([estart,end])
+            if [estart,end] not in results:
+                results.append([estart,end])
         # Go on to the next frame
         start = start + 1
     # That's it, we're done
@@ -134,7 +135,8 @@ def CF_find_beta(seq):
             [estart,end] = CF_extend_beta(seq, start, start+5)
             #print "Exploring potential alpha " + str(estart) + ":" + str(end)
             #if (CF_good_alpha(seq[estart:end])):
-            results.append([estart,end])
+            if [estart,end] not in results:
+                results.append([estart,end])
         # Go on to the next frame
         start = start + 1
     # That's it, we're done
@@ -227,7 +229,7 @@ def ChouFasman(seq):
 
     # Handle overlapping regions between alpha helix and beta strands
 
-    # First we merge the alpha helix regions together
+    '''# First we merge the alpha helix regions together
     x = 0
     while x < len(alphas)-1:
         if region_overlap(alphas[x],alphas[x+1]):
@@ -245,7 +247,7 @@ def ChouFasman(seq):
             betas.pop(x+1)
         else:
           x += 1
-    print "Ptential betas = " + str(betas)
+    print "Ptential betas = " + str(betas)'''
 
 
     # Then it's really messy!
