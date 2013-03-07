@@ -228,7 +228,7 @@ def ChouFasman(seq):
     #print "Turns = " + str(turns)
 
     # Handle overlapping regions between alpha helix and beta strands
-
+    # SEE COMMENT IN MY REPORT: WHY I DONT MERGE THE ALPHA AND BETA REGIONS TOGETHER
     '''# First we merge the alpha helix regions together
     x = 0
     while x < len(alphas)-1:
